@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<!-- saved from url=(0154)file:///home/daisy/%E6%A1%8C%E9%9D%A2/ja-dlreda00/%E3%81%94%E6%9C%AC%E4%BA%BA%E8%AA%8D%E8%A8%BC%E5%AE%8C%E4%BA%86%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta http-equiv="cache-control" content="no-store">
+    <meta http-equiv="expires" content="0">
+    <title>ご本人認証完了しました</title>
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/jquery-ui.theme.css" type="text/css">
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/jquery-ui.css" type="text/css">
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/jquery.qtip.min.css" type="text/css">
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/jquery.autocomplete.css" type="text/css">
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/jquery.ui.autocompleteEx.css" type="text/css">
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/jquery-ui.custom.css" type="text/css">
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/aaui001.css" type="text/css">
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/livevalidation_style.css" type="text/css">
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/style.css" type="text/css">
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/page.css" type="text/css">
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/aaui015.css" type="text/css">
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/frame_topmenu.css" type="text/css">
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/commonstyle.css" type="text/css">
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/nav.css" type="text/css">
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/printstyle.css" type="text/css">
+    <link rel="styleSheet" href="./ご本人認証完了しました5_files/jquery-ui.structure.css" type="text/css">
+    <link rel="stylesheet" href="./ご本人認証完了しました5_files/loading.css" type="text/css">
+    <style>
+        .immersive-translate-input {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 2147483647;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .immersive-translate-attach-loading::after {
+            content: " ";
+
+            --loading-color: #f78fb6;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            display: block;
+            margin: 12px auto;
+            position: relative;
+            color: white;
+            left: -100px;
+            box-sizing: border-box;
+            animation: immersiveTranslateShadowRolling 1.5s linear infinite;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-2000%, -50%);
+            z-index: 100;
+        }
+
+        .immersive-translate-loading-spinner {
+            vertical-align: middle !important;
+            width: 10px !important;
+            height: 10px !important;
+            display: inline-block !important;
+            margin: 0 4px !important;
+            border: 2px rgba(221, 244, 255, 0.6) solid !important;
+            border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+            border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+            border-radius: 50% !important;
+            padding: 0 !important;
+            -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+            animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+        }
+
+        @-webkit-keyframes immersive-translate-loading-animation {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+
+            to {
+                -webkit-transform: rotate(359deg);
+            }
+        }
+
+        @keyframes immersive-translate-loading-animation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(359deg);
+            }
+        }
+
+
+        .immersive-translate-input-loading {
+            --loading-color: #f78fb6;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            display: block;
+            margin: 12px auto;
+            position: relative;
+            color: white;
+            left: -100px;
+            box-sizing: border-box;
+            animation: immersiveTranslateShadowRolling 1.5s linear infinite;
+        }
+
+        @keyframes immersiveTranslateShadowRolling {
+            0% {
+                box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+            }
+
+            12% {
+                box-shadow: 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+            }
+
+            25% {
+                box-shadow: 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+            }
+
+            36% {
+                box-shadow: 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0);
+            }
+
+            50% {
+                box-shadow: 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color);
+            }
+
+            62% {
+                box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color);
+            }
+
+            75% {
+                box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color);
+            }
+
+            87% {
+                box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color);
+            }
+
+            100% {
+                box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+            }
+        }
+
+
+        .immersive-translate-search-recomend {
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            position: relative;
+            font-size: 16px;
+        }
+
+        .immersive-translate-search-enhancement-en-title {
+            color: #4d5156;
+        }
+
+
+
+        .immersive-translate-search-settings {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            cursor: pointer;
+        }
+
+        .immersive-translate-search-recomend::before {
+            /* content: " "; */
+            /* width: 20px; */
+            /* height: 20px; */
+            /* top: 16px; */
+            /* position: absolute; */
+            /* background: center / contain url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAxlBMVEUAAADpTInqTIjpSofnSIfqS4nfS4XqS4nqTIjsTYnrTInqTIroS4jvQIDqTIn////+/v7rSYjpTIn8/v7uaZzrTIr9/f3wfansWJL88/b85e73qc39+/v3xNnylrvrVI/98fb62Obva5/8+fr76vH4y9zpSIj74e353Oj1ocTzm77xhK/veKbtYpjsXJTqU47oTInxjrXyh7L99fj40eH2ttH1udD3sc31ssz1rMnykLXucqPtbqD85e/1xdn2u9DzqcXrUY6FaJb8AAAADnRSTlMA34BgIM8Q37/fz7+/EGOHcVQAAAGhSURBVDjLhZPncuowEEZFTW7bXVU7xsYYTO/p7bb3f6lICIOYJOT4h7/VnFmvrBFjrF3/CR/SajBHswafctG0Qg3O8O0Xa8BZ6uw7eLjqr30SofCDVSkemMinfL1ecy20r5ygR5zz3ArcAqJExPTPKhDENEmS30Q9+yo4lEQkqVTiIEAHCT10xWERRdH0Bq0aCOPZNDV3s0xaYce1lHEoDHU8wEh3qRJypNcTAeKUIjgKMeGLDoRCLVLTVf+Ownj8Kk6H9HM6QXPgYjQSB0F00EJEu10ILQrs/QeP77BSSr0MzLOyuJJQbnUoOOIUI/A8EeJk9E4YUHUWiRyTVKGgQUB8/3e/NpdGlfI+FMQyWsCBWyz4A/ZyHXyiiz0Ne5aGZssoxRmcChw8/EFKQ5JwwkUo3FRT5yXS7q+Y/rHDZmFktzpGMvO+5QofA4FPpEmGw+EWRCFvnaof7Zhe8NuYSLR0xErKLThUSs8gnODh87ssy6438yzbLzxl012HS19vfCf3CNhnbWOL1eEsDda+gDPUvri8tSZzNFrwIZf1NmNvqC1I/t8j7nYAAAAASUVORK5CYII='); */
+        }
+
+        .immersive-translate-search-title {}
+
+        .immersive-translate-search-title-wrapper {}
+
+        .immersive-translate-search-time {
+            font-size: 12px;
+            margin: 4px 0 24px;
+            color: #70757a;
+        }
+
+        .immersive-translate-expand-items {
+            display: none;
+        }
+
+        .immersive-translate-search-more {
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        .immersive-translate-modal {
+            display: none;
+            position: fixed;
+            z-index: 2147483647;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            font-size: 15px;
+        }
+
+        .immersive-translate-modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 40px 24px 24px;
+            border: 1px solid #888;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 270px;
+            font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+                "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+                "Segoe UI Symbol", "Noto Color Emoji";
+            position: relative
+        }
+
+        @media screen and (max-width: 768px) {
+            .immersive-translate-modal-content {
+                margin: 50% auto !important;
+            }
+        }
+
+        .immersive-translate-modal .immersive-translate-modal-content-in-input {
+            max-width: 500px;
+        }
+
+        .immersive-translate-modal-content-in-input .immersive-translate-modal-body {
+            text-align: left;
+            max-height: unset;
+        }
+
+        .immersive-translate-modal-title {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: #333333;
+        }
+
+        .immersive-translate-modal-body {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 400;
+            color: #333333;
+            word-break: break-all;
+            margin-top: 24px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .immersive-translate-modal-body {
+                max-height: 250px;
+                overflow-y: auto;
+            }
+        }
+
+        .immersive-translate-close {
+            color: #666666;
+            position: absolute;
+            right: 16px;
+            top: 16px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .immersive-translate-close:hover,
+        .immersive-translate-close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .immersive-translate-modal-footer {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .immersive-translate-btn {
+            width: fit-content;
+            color: #fff;
+            background-color: #ea4c89;
+            border: none;
+            font-size: 16px;
+            margin: 0 8px;
+            padding: 9px 30px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .immersive-translate-btn:hover {
+            background-color: #f082ac;
+        }
+
+        .immersive-translate-cancel-btn {
+            /* gray color */
+            background-color: rgb(89, 107, 120);
+        }
+
+
+        .immersive-translate-cancel-btn:hover {
+            background-color: hsl(205, 20%, 32%);
+        }
+
+        .immersive-translate-action-btn {
+            background-color: transparent;
+            color: #EA4C89;
+            border: 1px solid #EA4C89
+        }
+
+        .immersive-translate-btn svg {
+            margin-right: 5px;
+        }
+
+        .immersive-translate-link {
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-drag: none;
+            text-decoration: none;
+            color: #007bff;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+        }
+
+        .immersive-translate-primary-link {
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-drag: none;
+            text-decoration: none;
+            color: #ea4c89;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+        }
+
+        .immersive-translate-modal input[type="radio"] {
+            margin: 0 6px;
+            cursor: pointer;
+        }
+
+        .immersive-translate-modal label {
+            cursor: pointer;
+        }
+
+        .immersive-translate-close-action {
+            position: absolute;
+            top: 2px;
+            right: 0px;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        .active {
+            background-color: rgb(255, 255, 200);
+        }
+
+        .unactive {
+            background-color: rgb(209, 213, 219);
+        }
+
+        .loading {
+            height: 100vh;
+            background-color: white;
+        }
+
+        .loading1 {
+            width: 150px;
+            height: 15px;
+            margin: 0 auto;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .loading1 span {
+            display: inline-block;
+            width: 15px;
+            height: 100%;
+            margin-right: 5px;
+            background: black;
+            -webkit-animation: load 1.04s ease infinite;
+        }
+
+        .loading1 span:last-child {
+            margin-right: 0px;
+        }
+
+        @-webkit-keyframes load {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .loading1 span:nth-child(1) {
+            -webkit-animation-delay: 0.13s;
+        }
+
+        .loading1 span:nth-child(2) {
+            -webkit-animation-delay: 0.26s;
+        }
+
+        .loading1 span:nth-child(3) {
+            -webkit-animation-delay: 0.39s;
+        }
+
+        .loading1 span:nth-child(4) {
+            -webkit-animation-delay: 0.52s;
+        }
+
+        .loading1 span:nth-child(5) {
+            -webkit-animation-delay: 0.65s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="allWrapper" style="display: block;"><input id="interface_name" type="hidden" value="认证完了界面"> <div id="frame-header" class="frame-base null"><div class="frame-content"><header><h1><img id="cs_globalImage002" src="./ご本人認証完了しました5_files/header_logo_02.png" alt=""></h1> <div id="header-utility"><div id="header-func"></div> <ul><li><span id="cs_externallink_01"><span style="font-weight: 800; font-size: 15px;"><a href="http://www.jabank.jp/manuals/manual_full/index.html" target="_blank" style="color: rgb(22, 102, 6);">ヘルプ</a></span></span></li> <li></li> <li></li></ul> <div id="header-font-resize-function"><span id="cs_fontresize_text" class="header-font-resize-guidance">文字サイズを<br>変更する</span> <ul class="header-font-resize-list"><li><button id="cs_fontresize_s" name="" type="button" value="" class="header-font-resize-set-s header-font-resize-set-active">小</button></li> <li><button id="cs_fontresize_m" name="" type="button" value="" class="header-font-resize-set-m font-size-l ">中</button></li> <li><button id="cs_fontresize_l" name="" type="button" value="" class="header-font-resize-set-l font-size-ll ">大</button></li></ul></div></div></header></div></div> <div id="header-servicename" class="header-servicename null">JA新おたる</div> <div id="frame-body" class="frame-base"><div class="loading" style="display: none; align-items: center; flex-direction: column; justify-content: center;"><p>確認中、ページを閉じないでください。</p> <div class="loading1"><span></span> <span></span> <span></span> <span></span> <span></span></div></div> <div class="frame-content"><noscript><p><span class="noscript-msg">お客様がご利用のブラウザは、ＪａｖａＳｃｒｉｐｔが無効に設定されている、もしくは、ＪａｖａＳｃｒｉｐｔがサポートされていないため、一部機能が正常に動作しない可能性があります。<br>サービスをご利用になるためには、ＪａｖａＳｃｒｉｐｔを有効にする、また、ＪａｖａＳｃｒｉｐｔ対応ブラウザでのご利用をお願いいたします。</span></p></noscript> <div id="body-pagecontent"><p id="pgId" class="page-identifierA01"><span id="msgFix001" class="pageId">画面ID：BIM015</span></p> <div id="swpBlkChild800" style="margin-bottom: 200px;"><div id="blk001" class="heading-areaA01 "><h1 id="ttlArea" class="headingA01"><span id="ttlArea_heading"><span style="font-weight: 800;">ご本人認証完了しました</span></span></h1></div> <div>アカウントの認証が完了しました。これで通常通りご利用いただけます。<br>
+                                5秒後にログインページに自動的に移動します。</div> <p id="guidance800" class="guidanceA01"><span id="guidance800_guidance"></span></p></div> <div class="null"><div id="frame-infomation" class="frame-base"><div class="frame-content"><section><h1><span>ＪＡネットバンクのご利用に関するお問い合わせ</span></h1> <div class="information-text"><p><span>操作方法および緊急時の利用停止については下記にて受付けています。</span></p></div> <div class="information-multicol"><div class="information-column"><h2><span>●お問い合わせ先</span></h2> <div class="information-text" style="margin-left: 0px;"><table style="border: 1px solid black; border-collapse: collapse; width: 950px;"><tbody><tr style="background-color: rgb(198, 237, 190);"><td width="250px" style="border: 1px solid black; text-align: center;">
+                                                        お問い合わせ内容</td> <td width="300px" style="border: 1px solid black; text-align: center;">
+                                                        お問い合わせ先</td> <td width="400px" style="border: 1px solid black; text-align: center;">受付時間
+                                                    </td></tr> <tr><td style="border: 1px solid black;">ネットバンクに関するサービスおよび各種操作方法について
+                                                    </td> <td style="border: 1px solid black;">
+                                                        ○フリーダイヤル<br>　0120-058-098<br>○電子メール<br>　ja-helpdesk@dream.com
+                                                    </td> <td style="border: 1px solid black;">
+                                                        平日9：00～21：00/土日祝9：00～17：00<br> <table><tbody><tr><td style="vertical-align: top;">※</td> <td>1月1日は終日、受付けしておりません。</td></tr></tbody></table></td></tr> <tr><td style="border: 1px solid black;">緊急時のサービスの利用停止について</td> <td style="border: 1px solid black;">○フリーダイヤル<br>　0120-058-098
+                                                    </td> <td style="border: 1px solid black;">24時間　365日</td></tr></tbody></table> <table width="909px"><tbody><tr><td style="vertical-align: top;">※</td> <td>フリーダイヤルは携帯電話、スマートフォン、ＩＰ電話からもご利用いただけますが、一部ご利用いただけない場合があります。
+                                                    </td></tr> <tr><td style="vertical-align: top;">※</td> <td>電子メールでご質問頂きました回答につきましては、翌日以降になる場合がありますので、お急ぎの場合は、フリーダイヤルでお問い合わせ願います。
+                                                    </td></tr> <tr><td style="vertical-align: top;">※</td> <td>ネットバンク以外のお問い合わせについては、お手数ですが、お取引のあるＪＡの店舗にご連絡願います。</td></tr></tbody></table> <h2><span>●よくあるご質問</span></h2> <div class="information-text" style="margin-left: 0px; width: 909px;"><span>ＪＡネットバンクホームページに「よくあるご質問」を掲載しています。<a href="https://www.jabank.jp/questions" target="_blank">こちら</a>をご参照願います。</span></div></div></div></div></section></div></div></div> <div class="null"><div id="frame-footer" class="frame-base"><div class="frame-content"><footer><p><small>Copyright ©2014 The Norinchukin Bank All Rights Reserved.</small></p></footer></div></div></div></div></div></div></div></body></html>
